@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--PRIMARY COLOUR LIGHT MODE-->
+    <color name="colorPrimary">#303030</color>
+    <!--BACKGROUND COLOUR-->
+    <color name="colorPrimaryDark">#353535</color>
+    <!--BUTTON BACKGROUND-->
+    <color  name="colorPrimaryMid">#303030</color>
+
+    <!--FIXED TEXT COLOUR-->
+    <color name="colorAccent">#83609c</color>
+    <!--LIGHT MODE TEXT USE ONLY-->
+    <color name="colorAccentDark">#a2b9e0</color>
+    <!--TEXT-->
+    <color name="colorAccentLight">#00e59e</color>
+
+    <color name="colorTitle">#c05862</color>
+
+
+
+<!--STANDARD-->
+    <color name="colorBlack">#000000</color>
+    <color name="colorWhite">#ffffff</color>
+
+</resources>

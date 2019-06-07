@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">PokemonHelper</string>
+    <string name="dialog_choose_level"> Choose Level </string>
+    <string name="dialog_level_title">Level:</string>
+    <string name="dialog_choose_pokemon"> Choose Pokemon </string>
+    <string name="dialog_pokemon_title">Pokemon</string>
+    <string name="intro">Score</string>
+    <string name="addone">+1</string>
+    <string name="subtract">-1</string>
+    <string name="reset">RESET SCORE</string>
+    <string name="UI_ID">RESET</string>
+
+</resources>

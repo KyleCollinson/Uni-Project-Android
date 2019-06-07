@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+        <data>
+                <import type="com.example.pokemonhelper.Util.StringUtil" />
+                <variable
+                    name="iMethod"
+                    type="com.example.pokemonhelper.IMethod" />
+                <variable
+                    name="iPokemon"
+                    type="com.example.pokemonhelper.IPokemon" />
+                <variable
+                    name="level"
+                    type="int" />
+                <variable
+                    name="iInputActivity"
+                    type="com.example.pokemonhelper.IInputActivity" />
+            <variable
+                name="pokemon"
+                type="String" />
+                <variable
+                    name="method"
+                    type="String" />
+
+        </data>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".InputActivity"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark">
+
+        <TextView
+            android:id="@+id/margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="40dp"
+            android:textStyle="bold"
+            android:text=""
+
+            />
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:layout_below="@+id/margin"
+            android:text="Choose Who to Hunt"
+            android:textColor="@color/colorTitle"
+            />
+        <TextView
+            android:id="@+id/marginT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="40dp"
+            android:textStyle="bold"
+            android:text=""
+            android:layout_below="@+id/txtTitle"
+
+            />
+
+
+        <RelativeLayout
+            android:id="@+id/pokemonbox"
+            android:layout_below="@+id/marginT"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/grey_rounded_button"
+            android:onClick="@{() -> iPokemon.inflatePokemonDialog()}"
+
+            >
+
+                <TextView
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:id="@+id/poke"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Pokemon"
+                    android:text="@{pokemon}"
+                    android:textStyle="italic"
+                    android:textColor="@color/colorAccentLight"
+                    android:textColorHint="@color/colorAccent"
+             />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:src="@drawable/ic_up_down_arrows"
+                    android:layout_height="15dp"
+                    android:layout_toRightOf="@+id/poke"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/marginM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="40dp"
+            android:layout_below="@+id/pokemonbox"
+            android:text=""
+
+
+            />
+        <RelativeLayout
+            android:id="@+id/levelbox"
+            android:layout_below="@+id/marginM"
+            android:layout_width="55dp"
+            android:layout_height="25dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/grey_rounded_button"
+            android:onClick="@{() -> iInputActivity.inflateLevelDialog()}">
+
+                <TextView
+                    android:id="@+id/level"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:layout_centerVertical="true"
+                    android:hint="Level"
+                    android:text="@{StringUtil.getLevelString(level)}"
+                    android:textColor="@color/colorAccentLight"
+                    android:textColorHint="@color/colorAccent" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:src="@drawable/ic_up_down_arrows"
+                    android:layout_height="15dp"
+                    android:layout_toRightOf="@+id/level"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    />
+        </RelativeLayout>
+    <TextView
+        android:id="@+id/marginMethod"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="40dp"
+        android:layout_below="@+id/levelbox"
+        android:text=""
+
+
+        />
+        <RelativeLayout
+            android:id="@+id/methodbox"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/grey_rounded_button"
+            android:onClick="@{() -> iMethod.inflateMethodDialog()}"
+            android:layout_below="@+id/marginMethod"
+            android:textColor="@color/colorAccentLight"
+            >
+
+                <TextView
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:id="@+id/method"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/colorAccent"
+                    android:hint="Hunting Method"
+                    android:text="@{method}"
+                    android:textStyle="italic"
+                    android:textColor="@color/colorAccentLight"
+                    />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:src="@drawable/ic_up_down_arrows"
+                    android:layout_height="15dp"
+                    android:layout_toRightOf="@+id/method"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    />
+        </RelativeLayout>
+
+
+
+        <Button
+            android:id="@+id/hunt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="goHunt"
+            android:text="Hunt!"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/marginB"
+            android:textColor="@color/colorAccentLight"
+            android:background="@color/colorPrimaryMid"
+
+            />
+        <TextView
+            android:id="@+id/marginB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="40dp"
+            android:layout_above="@+id/back"
+            android:text=""
+
+
+            />
+        <Button
+            android:id="@+id/updateButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="update"
+            android:text="Update"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:textColor="@color/colorAccentLight"
+            android:background="@color/colorPrimaryMid"
+
+
+            />
+        <Button
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="goBack"
+            android:text="Go Back"
+
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:textColor="@color/colorAccentLight"
+            android:background="@color/colorPrimaryMid"
+
+
+            />
+    </RelativeLayout>
+</layout>
+
+
+
+
+
+
+

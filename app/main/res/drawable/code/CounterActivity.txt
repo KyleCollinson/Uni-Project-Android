@@ -1,0 +1,88 @@
+
+//
+//        //region PASSED DATA
+//        //COMPLICATION
+//                          /*  INITIALISE TEH DATA TO BE PASSED THROUGH*/
+//        Bundle extras = getIntent().getExtras();
+//        if (extras != null){
+//            String UchosenID = extras.getString("ID");
+//            String UchosenLevel = extras.getString("LEVEL");
+//            String UchosenName = extras.getString("NAME");
+//
+//        } else{
+//            UchosenID = "1";
+//            UchosenLevel ="1";
+//            UchosenName ="Bulbasaur";
+//        }
+//
+//
+//       /* GET DATA FROM DBADAPTER TO USE*/
+//
+//        DBAdapter data = new DBAdapter(this);
+//        data.openDatabase();
+//        A_MOVES= data.PredictedMoves(UchosenID,UchosenLevel);
+//        //endregion
+
+
+        //regionCOUNTER
+        //SET UP BUTTONS
+        //COMPLICATION
+/*
+        countDown=(Button)findViewById(R.id.countdown);
+        countUp=(Button)findViewById(R.id.countup);
+        countReset=(Button)findViewById(R.id.caught);
+        textCount =(TextView)findViewById(R.id.counterText);
+
+
+        countDown.setOnClickListener(this);
+        countUp.setOnClickListener(this);
+        countReset.setOnClickListener(this);
+*/
+
+        //endregion
+
+
+
+        //region LISTVIEW
+/*         moveset = findViewById(R.id.ListMoves);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(CounterActivity.this, android.R.layout.simple_list_item_1,A_MOVES);
+        moveset.setAdapter(adapter);
+        //endregion*/
+
+
+    }//END ON CREATE
+    /*
+final CounterActivity counterActivity = DataBindingUtil.s etContentView(
+        this, R.layout.activity_welcome)
+        counterActivity.update.setOnclickListener(new View.onClickListener()){
+    @Override
+            public void onClick(View view){
+        counterActivity.textView1.setText(R.string.text1b)
+        }
+}
+*/
+
+
+    public void onClick(View v) {
+        //COMPLICATION
+/*        if(v==countDown){
+        counter++;
+            textCount.setText(counter);
+        }else if (v== countUp){
+            counter--;
+            textCount.setText(counter);
+        }else if (v==countReset ){
+            counter=0;
+            textCount.setText(counter);
+        }else{
+            Log.e("CounterActivity","COUNTER.EXE ERROR(ONCLICK COUNTER != BUTTONS)  -DEBUG COUNTER.EXE");
+            Toast.makeText(this, "Error With Counter",Toast.LENGTH_SHORT).show();*/
+    }
+
+
+    public void Caught(View v) {
+        //NON FUNCTIONAL
+        //GO BACK BUTTON
+
+    }

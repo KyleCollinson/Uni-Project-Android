@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textColor="@color/colorAccentLight"
+    android:background="@color/colorPrimaryDark"
+    android:textColorHint="@color/colorAccent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        android:text=""
+        />
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/margin"
+        android:text="Main Menu"
+        android:textColor="@color/colorTitle"
+        />
+    <Button
+        android:id="@+id/choice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryMid"
+        android:onClick="Hunt"
+        android:text="Hunt a Poke!"
+        android:layout_margin="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/txtTitle"
+        android:textColor="@color/colorAccentLight"
+
+        />
+    <TextView
+        android:id="@+id/marginM"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="40dp"
+        android:layout_below="@+id/choice"
+
+        />
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/marginM"
+        android:background="@color/colorPrimaryDark"
+        android:layout_toStartOf="@+id/marginMid"
+        android:onClick="Login"
+        android:textColor="@color/colorAccentLight"
+        android:text="Login" />
+
+    <TextView
+        android:id="@+id/marginMid"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/marginM"
+        android:layout_centerHorizontal="true"
+
+        android:textSize="40dp" />
+
+    <Button
+        android:id="@+id/reg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:layout_toEndOf="@+id/marginMid"
+        android:layout_below="@+id/marginM"
+        android:onClick="Register"
+        android:textColor="@color/colorAccentLight"
+        android:text="Register" />
+
+
+
+</RelativeLayout>
+</layout>

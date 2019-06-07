@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <import type="com.example.pokemonhelper.Util.StringUtil" />
+        <variable
+            name="setTestInt"
+            type="int" />
+
+    <variable
+        name="odds"
+        type="int" />
+
+        <variable
+            name="move1"
+            type="String" />
+        <variable
+            name="move2"
+            type="String" />
+        <variable
+            name="move3"
+            type="String" />
+        <variable
+            name="move4"
+            type="String" />
+
+        <variable
+            name="move_array"
+            type="java.util.ArrayList" />
+         <variable
+            name= "pokemon"
+            type="com.example.pokemonhelper.models.Pokemon">
+        </variable>
+        <variable
+            name="counter"
+            type="int" />
+    </data>
+    <RelativeLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".CounterActivity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDark"
+        >
+        <TextView
+            android:id="@+id/marginTLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:text="                "
+            />
+        <Button
+            android:id="@+id/caught"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="Caught"
+            android:layout_toRightOf="@+id/marginTLeft"
+            android:background="@color/colorPrimaryMid"
+            android:textColor="@color/colorAccentLight"
+            android:text="Caught"
+            android:textStyle="italic"
+            android:layout_marginRight="@android:dimen/app_icon_size"
+
+            />
+
+        <TextView
+            android:id="@+id/margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:text=""
+            />
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorAccent"
+            android:layout_below="@+id/margin"
+            android:text="@{pokemon.pokename}"
+            />
+        <TextView
+            android:id="@+id/marginT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="40dp"
+            android:textStyle="bold"
+
+            android:text=""
+            android:layout_below="@+id/txtTitle"
+
+            />
+        <Button
+            android:id="@+id/countdown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="countDown"
+            android:clickable="true"
+            android:text="-"
+            android:layout_toLeftOf="@+id/counterText"
+            android:layout_marginLeft="@android:dimen/app_icon_size"
+            android:textStyle="italic"
+            android:layout_below="@+id/marginT"
+            android:background="@color/colorPrimaryMid"
+            android:textColor="@color/colorAccentLight"
+            />
+        <TextView
+            android:id="@+id/counterText"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:text="@{StringUtil.getCounterString(counter)}"
+            android:hint="Counter= 0"
+            android:textColorHint="@color/colorAccentDark"
+            android:layout_below="@+id/marginT"
+            android:textAlignment="center"
+            android:textColor="@color/colorAccentDark"
+
+            />
+        <Button
+            android:id="@+id/countup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryMid"
+            android:textColor="@color/colorAccentLight"
+            android:onClick="countUp"
+            android:text="+"
+            android:layout_toRightOf="@+id/counterText"
+            android:layout_marginRight="@android:dimen/app_icon_size"
+            android:textStyle="italic"
+            android:layout_below="@+id/marginT"/>
+
+
+        <ImageView
+            android:id="@+id/PicPoke"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_above="@+id/marginB"
+            android:layout_toLeftOf="@+id/movebox"
+            app:imageid="@{pokemon.image}"
+
+            />
+        <TextView
+            android:id="@+id/odds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/movebox"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:text="@{StringUtil.convertIntToString(odds)}"
+            android:hint="1 in 4096  Encounters"
+            android:textSize="30sp"
+            android:textColor="@color/colorAccentDark"
+            android:textColorHint="@color/colorAccentDark"
+            />
+        <RelativeLayout
+            android:id="@+id/movebox"
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_above="@+id/marginB"
+            android:layout_centerHorizontal="true"
+            >
+        <TextView
+            android:id="@+id/move1"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:textAlignment="center"
+            android:hint="Move1"
+            android:textColor="@color/colorAccentLight"
+            android:textColorHint="@color/colorAccent"
+            android:text="@{move1}"    />
+            <TextView
+                android:id="@+id/move2"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:textAlignment="center"
+                android:layout_below="@+id/move1"
+                android:hint="Move2"
+                android:textColor="@color/colorAccentLight"
+                android:textColorHint="@color/colorAccent"
+                android:text="@{move2}"    />
+            <TextView
+                android:id="@+id/move3"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:textAlignment="center"
+                android:layout_below="@+id/move2"
+                android:hint="Move3"
+                android:textColor="@color/colorAccentLight"
+                android:textColorHint="@color/colorAccent"
+                android:text="@{move3}"    />
+            <TextView
+                android:id="@+id/move4"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:textAlignment="center"
+                android:hint="Move4"
+                android:layout_below="@+id/move3"
+                android:textColor="@color/colorAccentLight"
+                android:textColorHint="@color/colorAccent"
+                android:text="@{move4}"    />
+
+-->
+    </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/PicSPoke"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_above="@+id/marginB"
+            android:layout_toEndOf="@+id/movebox"
+            app:Shinyimageid="@{pokemon.Shinyimage}"
+
+
+            />
+
+        <TextView
+            android:id="@+id/marginB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="40dp"
+            android:layout_above="@+id/back"
+            android:text=""
+
+
+            />
+        <Button
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="goBack"
+            android:text="Go Back"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorPrimaryMid"
+            android:textColor="@color/colorAccentLight"
+
+            />
+    </RelativeLayout>
+</layout>

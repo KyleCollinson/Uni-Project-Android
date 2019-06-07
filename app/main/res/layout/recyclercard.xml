@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/tools"
+    app:ignore="NamespaceTypo">
+    <data>
+
+        <variable
+            name="poke"
+            type="com.example.pokemonhelper.models.Poke" />
+
+    </data>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="75dp"
+    android:foregroundGravity="center_horizontal"
+    card_view:cardCornerRadius="5dp"
+    card_view:cardElevation="5dp"
+    android:layout_margin="5dp"
+    android:id="@+id/root_view"
+    android:background="@color/colorPrimaryDark"
+    android:textColorHint="@color/colorAccent"
+    android:textColor="@color/colorAccentLight"
+    >
+    <!--android:onClick="@{poke.id"-->
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:civ_border_width="1dp"
+        app:civ_border_color="@color/colorPrimaryMid"
+        android:id="@+id/pokemon_pic"
+        android:imageUrl="@{poke.imageId}"
+        />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/text"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:layout_toRightOf="@+id/pokemon_pic">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="PokemonID"
+        android:text="@{poke.id}"
+        android:id="@+id/pokeID"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorAccentLight"
+        android:layout_alignParentStart="true"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pokeID"
+        android:hint="Pokemon Name"
+        android:text="@{poke.name}"
+        android:id="@+id/pokename"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorAccentLight"
+        android:layout_alignParentStart="true"
+        />
+        <!--android:text="@{pokemon.pokename}"
+        android:text="@{pokemon.pokeId}"-->
+</RelativeLayout>
+
+</LinearLayout>
+</layout>
